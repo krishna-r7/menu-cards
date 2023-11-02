@@ -1,0 +1,83 @@
+
+
+<div class="container-fluid">
+    <div class="row flex-nowrap">
+        <div class="col-auto col-md-3 col-xl-2 px-sm-2 px-0 bg-dark">
+            <div class="d-flex flex-column align-items-center align-items-sm-start px-3 pt-2 text-white min-vh-100">
+                <a href="/" class="d-flex align-items-center pb-3 mb-md-0 me-md-auto text-white text-decoration-none">
+                    <span class="fs-5 d-none d-sm-inline">Menu</span>
+                </a>
+                <ul class="nav nav-pills flex-column mb-sm-auto mb-0 align-items-center align-items-sm-start" id="menu">
+                    <li class="nav-item">
+                        <a href="/indexadmin" class="nav-link align-middle px-0">
+                            <i class="fs-4 bi-house"></i> <span class="ms-1 d-none d-sm-inline">Home</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="/adminuserview" class="nav-link align-middle px-0">
+                            <i class="fs-4 bi-house"></i> <span class="ms-1 d-none d-sm-inline">Users</span>
+                        </a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a href="/menuadd" class="nav-link align-middle px-0">
+                            <i class="fs-4 bi-house"></i> <span class="ms-1 d-none d-sm-inline">Add Items</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="/adminprofile" class="nav-link align-middle px-0">
+                            <i class="fs-4 bi-house"></i> <span class="ms-1 d-none d-sm-inline">Profile</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="/adminmenuview" class="nav-link align-middle px-0">
+                            <i class="fs-4 bi-house"></i> <span class="ms-1 d-none d-sm-inline">Menu View</span>
+                        </a>
+                    </li>
+
+                  
+
+
+
+                </ul>
+                <hr>
+
+            </div>
+        </div>
+
+
+<div class="col py-3">
+
+
+  <table class="table">
+    <thead>
+      <tr>
+
+        <th scope="col">foodname</th>
+        <th scope="col">Region</th>
+        <th scope="col">Category</th>
+        <th scope="col">Description</th>
+
+      </tr>
+    </thead>
+    <tbody>
+      {{#each menuItem}}
+      <tr>
+
+        <td>{{this.foodname}}</td>
+        <td>{{this.item.[0].region}}</td>
+        <td>{{this.item.[0].item1.[0].category}}</td>
+        <td>{{this.item.[0].item1.[0].item2.[0].desc}}</td>
+        <td>
+        <a href="/menuedit/{{this._id}}" class="btn btn-primary">Edit</a>
+        <a href="/deletemenu/{{this._id}}" class="btn btn-danger">Delete</a> 
+      </td>
+
+      </tr>
+      {{/each}}
+
+    </tbody>
+  </table>
+  </div>
+    </div>
+</div>

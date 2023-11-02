@@ -1,0 +1,84 @@
+<div class="container-fluid">
+    <div class="row flex-nowrap">
+        <div class="col-auto col-md-3 col-xl-2 px-sm-2 px-0 bg-dark">
+            <div class="d-flex flex-column align-items-center align-items-sm-start px-3 pt-2 text-white min-vh-100">
+                <a href="/" class="d-flex align-items-center pb-3 mb-md-0 me-md-auto text-white text-decoration-none">
+                    <span class="fs-5 d-none d-sm-inline">Menu</span>
+                </a>
+                <ul class="nav nav-pills flex-column mb-sm-auto mb-0 align-items-center align-items-sm-start" id="menu">
+                    <li class="nav-item">
+                        <a href="/indexadmin" class="nav-link align-middle px-0">
+                            <i class="fs-4 bi-house"></i> <span class="ms-1 d-none d-sm-inline">Home</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="/adminuserview" class="nav-link align-middle px-0">
+                            <i class="fs-4 bi-house"></i> <span class="ms-1 d-none d-sm-inline">Users</span>
+                        </a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a href="/menuadd" class="nav-link align-middle px-0">
+                            <i class="fs-4 bi-house"></i> <span class="ms-1 d-none d-sm-inline">Add Items</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="/adminprofile" class="nav-link align-middle px-0">
+                            <i class="fs-4 bi-house"></i> <span class="ms-1 d-none d-sm-inline">Profile</span>
+                        </a>
+                    </li>
+                </ul>
+                <hr>
+
+            </div>
+        </div>
+
+
+        <div class="col py-3">
+            <div class="container section-1 mt-5">
+                <div class="card-1">
+                    <div class="card-header-1">
+                        <h2>Add Food</h2>
+                    </div>
+                    <div class="card-body-1">
+                        <!-- menuupdate.hbs -->
+                        <form action="/menuupdate/{{itemToEdit._id}}" method="post">
+                            <div class="form-group-1">
+                                <label for="foodname">Name:</label>
+                                <input required class="form-control" value="{{itemToEdit.foodname}}" name="foodname"
+                                    id="foodname" type="text">
+                            </div>
+                            <div class="form-group-1">
+                                <label for="region">Region:</label>
+                                <input required class="form-control" value="{{itemToEdit.item.[0].region}}"
+                                    name="region" id="region" type="text">
+                            </div>
+                            <div class="form-group-1">
+                                <label for="category">Category:</label>
+                                <input required class="form-control" value="{{itemToEdit.item.[0].item1.[0].category}}"
+                                    name="category" id="category" type="text">
+                            </div>
+                            <div class="form-group-1">
+                                <label for="desc">Description:</label>
+                                <input required class="form-control"
+                                    value="{{itemToEdit.item.[0].item1.[0].item2.[0].desc}}" name="desc" id="desc"
+                                    type="text">
+                            </div>
+                            <input type="submit" class="btn btn-dark" value="Update">
+                        </form>
+
+
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<footer class="bg-seondary text-center text-white fixed-bottom">
+    <div class="text-center p-3 text-black" style="background-color: rgba(0, 0, 0, 0.2);">
+        © 2020 Copyright:
+        <a class="text-black" href="">Krishna</a>
+    </div>
+</footer>
